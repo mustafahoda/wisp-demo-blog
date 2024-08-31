@@ -13,12 +13,7 @@ export const BlogPostPreview: FunctionComponent<{
     <div className="break-words">
       <Link href={`/blog/${post.slug}`}>
         <div className="aspect-[16/9] relative">
-          <Image
-            alt={post.title}
-            className="object-cover"
-            src={post.image || "/images/placeholder.webp"}
-            fill
-          />
+          <Image alt={post.title} className="object-cover" src={post.image || "/images/placeholder.webp"} fill />
         </div>
       </Link>
       <div className="grid grid-cols-1 gap-3 md:col-span-2 mt-4">
@@ -48,12 +43,7 @@ export const BlogPostsPreview: FunctionComponent<{
   className?: string;
 }> = ({ posts, className }) => {
   return (
-    <div
-      className={cn(
-        "grid grid-cols-1 gap-16 lg:gap-28 md:grid-cols-2 md:my-16 my-8",
-        className
-      )}
-    >
+    <div className={cn("grid grid-cols-1 gap-16 lg:gap-28 md:grid-cols-2 md:my-16 my-8", className)}>
       {posts.map((post) => (
         <BlogPostPreview key={post.id} post={post} />
       ))}
